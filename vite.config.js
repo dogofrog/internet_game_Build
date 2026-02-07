@@ -1,8 +1,8 @@
 import { defineConfig } from 'vite'
 import { resolve } from 'path'
 
-export default defineConfig({
-  base: '/internet_game_Build/',
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/internet_game_Build/',
   build: {
     rollupOptions: {
       input: {
@@ -12,4 +12,4 @@ export default defineConfig({
       },
     },
   },
-})
+}))
