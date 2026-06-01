@@ -3,37 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Играть - Обучающая Web-игра</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Играть — Сетевой Герой</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <h1 class="text-2xl font-bold">Обучающая Web-игра</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="hover:underline">Главная</a>
-        <a href="learn.html" class="hover:underline">Обучение</a>
-        <a href="play.html" class="hover:underline">Играть</a>
+    <div class="nav-inner">
+      <span class="site-title">⚡ Сетевой Герой</span>
+      <nav>
+        <a href="index.html">Главная</a>
+        <a href="play.html" class="active">Играть</a>
       </nav>
     </div>
   </header>
 
-  <main class="container mx-auto my-10 px-4">
-    <h2 class="text-3xl font-bold mb-6 text-center">Игровая страница</h2>
-    <div class="w-full bg-black/10 rounded-lg overflow-hidden shadow-lg" style="aspect-ratio: 16 / 9;">
+  <main class="play-container">
+    <div class="game-wrapper">
       <iframe
-        title="Unity WebGL Game"
-        src="unity/index.html?v=2"
-        style="width: 100%; height: 100%; border: 0;"
+        title="Сетевой Герой — игра"
+        src="unity/index.html"
         allowfullscreen
       ></iframe>
     </div>
   </main>
 
   <footer>
-    <p>&copy; 2025 Обучающая Web-игра. Все права защищены.</p>
+    <p>&copy; 2026 Сетевой Герой &mdash; обучающее приложение по сетевым технологиям. Образумов И.А., МТУСИ.</p>
   </footer>
 
   <script type="module" src="./src/main.js"></script>

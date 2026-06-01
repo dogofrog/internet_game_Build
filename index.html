@@ -3,49 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Главная - Обучающая Web-игра</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Сетевой Герой — обучающая игра по сетевым технологиям</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Navbar -->
   <header>
-    <div class="container mx-auto flex justify-between items-center px-4">
-      <h1 class="text-2xl font-bold">Обучающая Web-игра</h1>
-      <nav class="space-x-4">
-        <a href="index.html" class="hover:underline">Главная</a>
-        <a href="learn.html" class="hover:underline">Обучение</a>
-        <a href="play.html" class="hover:underline">Играть</a>
+    <div class="nav-inner">
+      <span class="site-title">⚡ Сетевой Герой</span>
+      <nav>
+        <a href="index.html" class="active">Главная</a>
+        <a href="play.html">Играть</a>
       </nav>
     </div>
   </header>
 
-  <!-- Hero Section -->
   <section class="hero-section">
-    <h2 class="hero-title">Учись сетевым технологиям через игру</h2>
-    <p class="hero-text">Погружение в основы маршрутизации, IP, портов и клиент-серверной архитектуры в игровой форме.</p>
-    <a href="play.html" class="btn">Начать играть</a>
+    <div class="hero-emoji">📦</div>
+    <h1 class="hero-title">Ты — <span>пакет данных</span>.<br>Проведи себя через всю сеть!</h1>
+    <p class="hero-text">
+      Обучающая игра по основам сетевых технологий — прямо в браузере, без установки.<br>
+      Составляй команды, обходи препятствия и узнавай, как на самом деле работает интернет.
+    </p>
+    <a href="play.html" class="btn">Начать игру →</a>
   </section>
 
-  <!-- Features Section -->
   <section class="features-section">
     <div class="feature-card">
-      <h3 class="text-xl font-semibold mb-2">Последовательность команд</h3>
-      <p>Учимся строить логические последовательности действий и видеть результат шаг за шагом.</p>
+      <div class="feature-icon">🎮</div>
+      <h3>Управляй пакетом данных</h3>
+      <p>Ты играешь за пакет данных, который путешествует по сети. Составляй последовательность команд и веди его к цели шаг за шагом.</p>
     </div>
     <div class="feature-card">
-      <h3 class="text-xl font-semibold mb-2">Маршрутизация и адресация</h3>
-      <p>Визуализируем, как пакеты данных проходят через сеть и как работает маршрутизация.</p>
+      <div class="feature-icon">🌐</div>
+      <h3>Путь через всю сеть</h3>
+      <p>Посещай сетевые устройства в правильном порядке: серверы, маршрутизаторы, коммутаторы — как настоящий пакет в интернете.</p>
     </div>
     <div class="feature-card">
-      <h3 class="text-xl font-semibold mb-2">Клиент-сервер и порты</h3>
-      <p>Разворачиваем серверы, открываем порты и учимся понимать роль фаервола.</p>
+      <div class="feature-icon">🏆</div>
+      <h3>8 уровней — от сервера до Wi‑Fi</h3>
+      <p>Дата-центр, сеть провайдера, DNS, локальная сеть, беспроводной Wi‑Fi — каждый уровень открывает новую часть интернета.</p>
     </div>
   </section>
 
   <footer>
-    <p>&copy; 2025 Обучающая Web-игра. Все права защищены.</p>
+    <p>&copy; 2026 Сетевой Герой &mdash; обучающее приложение по сетевым технологиям. Образумов И.А., МТУСИ.</p>
   </footer>
 
   <script type="module" src="./src/main.js"></script>

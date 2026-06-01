@@ -1,9 +1,9 @@
 export function initNavbar() {
-  const navLinks = document.querySelectorAll("nav a");
-  navLinks.forEach(link => {
-    link.addEventListener("click", () => {
-      navLinks.forEach(l => l.classList.remove("text-yellow-300"));
-      link.classList.add("text-yellow-300");
-    });
+  const current = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('nav a').forEach(link => {
+    link.classList.remove('active');
+    if (link.getAttribute('href') === current) {
+      link.classList.add('active');
+    }
   });
 }

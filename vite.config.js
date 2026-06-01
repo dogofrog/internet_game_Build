@@ -7,7 +7,6 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
-        learn: resolve(__dirname, 'learn.html'),
         play: resolve(__dirname, 'play.html'),
       },
     },
