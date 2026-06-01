@@ -84,7 +84,11 @@
             unityInstance.SetFullscreen(1);
           };
         }).catch((message) => {
-          alert(message);
+          document.querySelector("#unity-loading-bar").style.display = "none";
+          var err = document.createElement("div");
+          err.style = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#1e2f47;color:#f1f5f9;font-family:sans-serif;font-size:1.1rem;text-align:center;padding:2rem 2.5rem;border-radius:1rem;border:1.5px solid #38bdf8;max-width:420px;";
+          err.innerHTML = "<div style='font-size:2.5rem;margin-bottom:1rem'>⚠️</div><b>Не удалось запустить игру</b><br><br>" + message + "<br><br><small style='color:#94a3b8'>Убедись, что браузер поддерживает WebGL и обновлены драйверы видеокарты</small>";
+          document.querySelector("#unity-container").appendChild(err);
         });
       };
 
