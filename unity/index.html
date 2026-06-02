@@ -9,7 +9,9 @@
   </head>
   <body>
     <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas" width=1920 height=1080 tabindex="-1"></canvas>
+      <div id="unity-canvas-wrapper">
+        <canvas id="unity-canvas" tabindex="-1"></canvas>
+      </div>
       <div id="unity-loading-bar">
         <div id="unity-logo"></div>
         <div id="unity-progress-bar-empty">
@@ -67,8 +69,19 @@
         document.querySelector("#unity-container").className = "unity-mobile";
         canvas.className = "unity-mobile";
       } else {
-        canvas.style.width  = "960px";
-        canvas.style.height = "540px";
+        function resizeCanvasToContainer() {
+          var container = document.querySelector("#unity-container");
+          var aspect = 16 / 9;
+          var w = container.clientWidth;
+          var h = container.clientHeight;
+          var cw = w;
+          var ch = w / aspect;
+          if (ch > h) { ch = h; cw = h * aspect; }
+          canvas.style.width  = cw + "px";
+          canvas.style.height = ch + "px";
+        }
+        window.addEventListener("resize", resizeCanvasToContainer);
+        resizeCanvasToContainer();
       }
 
       document.querySelector("#unity-loading-bar").style.display = "block";
@@ -84,11 +97,7 @@
             unityInstance.SetFullscreen(1);
           };
         }).catch((message) => {
-          document.querySelector("#unity-loading-bar").style.display = "none";
-          var err = document.createElement("div");
-          err.style = "position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:#1e2f47;color:#f1f5f9;font-family:sans-serif;font-size:1.1rem;text-align:center;padding:2rem 2.5rem;border-radius:1rem;border:1.5px solid #38bdf8;max-width:420px;";
-          err.innerHTML = "<div style='font-size:2.5rem;margin-bottom:1rem'>⚠️</div><b>Не удалось запустить игру</b><br><br>" + message + "<br><br><small style='color:#94a3b8'>Убедись, что браузер поддерживает WebGL и обновлены драйверы видеокарты</small>";
-          document.querySelector("#unity-container").appendChild(err);
+          alert(message);
         });
       };
 
